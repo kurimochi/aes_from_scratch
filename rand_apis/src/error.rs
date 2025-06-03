@@ -4,17 +4,17 @@ use std::fmt;
 
 pub enum RandError {
     /* プラットフォーム未対応 */
-    UnsupportedPlatform{target: String},
+    UnsupportedPlatform { target: String },
     /* 入力が不正だった場合 */
-    InvalidInput{detail: String},
+    InvalidInput { detail: String },
     /* エントロピー不足のエラー */
     InsufficientEntropy,
     /* syscallでのエラー */
-    SyscallFailed{errno: i32},
+    SyscallFailed { errno: i32 },
     /* /dev/urandom等読み込み時のエラー */
-    FallbackFailed{source: std::io::Error},
+    FallbackFailed { source: std::io::Error },
     /* プラットフォーム固有のエラー */
-    PlatformSpecificError{code: u32, message: String}
+    PlatformSpecificError { code: u32, message: String }
 }
 
 impl fmt::Display for RandError {
