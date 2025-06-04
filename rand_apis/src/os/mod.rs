@@ -12,3 +12,6 @@ pub use linux::rand_api;
 mod macos;
 #[cfg(target_os = "macos")]
 pub use macos::rand_api;
+
+mod fallback;
+pub use fallback::*;
