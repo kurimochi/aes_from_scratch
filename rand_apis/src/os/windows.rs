@@ -1,7 +1,7 @@
 use windows_sys::Win32::Security::Cryptography::BCryptGenRandom;
 use crate::error::RandError;
 
-fn rand_api(buf: &mut [u8]) -> Result<(), RandError> {
+pub fn rand_api(buf: &mut [u8]) -> Result<(), RandError> {
     let result = unsafe {
         BCryptGenRandom(
             std::ptr::null_mut(),
