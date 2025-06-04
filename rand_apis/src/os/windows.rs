@@ -1,7 +1,7 @@
 use crate::error::RandError;
 
+#[link(name = "bcrypt")]
 unsafe extern "system" {
-    #[allow(dead_code)]
     fn BCryptGenRandom(
         hAlgorithm: *mut std::ffi::c_void,
         pbBuffer: *mut u8,
@@ -16,7 +16,7 @@ pub fn rand_api(buf: &mut [u8]) -> Result<(), RandError> {
             std::ptr::null_mut(),
             buf.as_mut_ptr(),
             buf.len() as u32,
-            0,
+            2,
         )
     };
 
