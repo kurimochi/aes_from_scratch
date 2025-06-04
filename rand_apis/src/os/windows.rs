@@ -1,5 +1,14 @@
-use windows_sys::Win32::Security::Cryptography::BCryptGenRandom;
 use crate::error::RandError;
+
+unsafe extern "system" {
+    #[allow(dead_code)]
+    fn BCryptGenRandom(
+        hAlgorithm: *mut std::ffi::c_void,
+        pbBuffer: *mut u8,
+        cbBuffer: u32,
+        dwFlags: u32,
+    ) -> i32;
+}
 
 pub fn rand_api(buf: &mut [u8]) -> Result<(), RandError> {
     let result = unsafe {
