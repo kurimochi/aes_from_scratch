@@ -1,3 +1,7 @@
 # Excluded because most of the information is debugging information
 # ほとんどがデバッグ情報なので除外
 target/
+
+# References
+# 参考文献
+references/
