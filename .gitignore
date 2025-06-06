@@ -1,7 +1,3 @@
-# The aes project is also available but excluded
-# aesプロジェクトも用意しているが除外
-/aes
-
 # Excluded because most of the information is debugging information
 # ほとんどがデバッグ情報なので除外
-/rand_apis/target
+target/
