@@ -1,0 +1,8 @@
+[package]
+name = "aes_gcm"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rand_apis = { path = "../rand_apis" }
+aes_basic = { path = "../aes_basic" }
